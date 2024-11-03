@@ -26,8 +26,9 @@ Currently the washington database does not have full customer demographics.
 This file currently works with csv files to generate data.
 - Before putting into production will need to connect to actual datasource.
 - Currently script only looks at 2017 data from Jan-Jun.
-    - Will need to take into condsideration full year.
-    - Also need need to expand for future growth.
+    - Will need to add filters for all 12 months.
+    - Will need to add filter for year selection
+    - Also need need to expand for future growth of cities.
 
 ### Credits:
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
