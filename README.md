@@ -7,6 +7,11 @@ Bikeshare_Udacity
 ### Description:
 Created script to quickly analyze files from bikeshare.
 
+### Install:
+For python file to work you will need to install
+- [Pandas](https://pandas.pydata.org/)
+- [Numpy](https://numpy.org/)
+
 ### Files used:
 To properly run the python script it requires 3 different datasources:
 - chicago.csv
