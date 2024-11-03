@@ -33,7 +33,7 @@ This file currently works with csv files to generate data.
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
 
 Links used to 
-[factory_bot](https://github.com/thoughtbot/factory_bot)
-[can_viewify](https://github.com/zkat/can.viewify)
-[udacity_create_your_own_adventure](https://github.com/udacity/create-your-own-adventure)
+- [factory_bot](https://github.com/thoughtbot/factory_bot)
+- [can_viewify](https://github.com/zkat/can.viewify)
+- [udacity_create_your_own_adventure](https://github.com/udacity/create-your-own-adventure)
 
