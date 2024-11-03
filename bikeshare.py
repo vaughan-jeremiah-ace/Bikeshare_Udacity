@@ -101,7 +101,6 @@ def time_stats(df):
         popular_month = df['Month'].mode()[0]
         print('The most popular month is: {}. \n'.format(popular_month))
         month_complete = time.time()
-        print('The time to retrieve data is: %s seconds.\n' % (month_complete - start_time))    
     else:
        print('Only one month selected, so unable to calculate most frequent month.')
      
@@ -113,7 +112,6 @@ def time_stats(df):
         popular_weekday = df['day_of_week'].mode()[0]
         print('The most popular day of the week is: {}. \n'.format(popular_weekday))
         day_complete = time.time()
-        print('The time to retrieve data is: %s seconds.\n' % (day_complete - weekday_start_time))
     else:
        print('Only one weekday selected, so unable to calculate most frequent day')
  
