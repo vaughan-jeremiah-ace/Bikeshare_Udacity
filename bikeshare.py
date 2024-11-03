@@ -101,7 +101,6 @@ def time_stats(df):
         popular_month = df['Month'].mode()[0]
         print('The most popular month is: {}. \n'.format(popular_month))
         month_complete = time.time()
-        print('The time to retrieve data is: %s seconds.\n' % (month_complete - start_time))    
     else:
        print('Only one month selected, so unable to calculate most frequent month.')
      
@@ -113,7 +112,6 @@ def time_stats(df):
         popular_weekday = df['day_of_week'].mode()[0]
         print('The most popular day of the week is: {}. \n'.format(popular_weekday))
         day_complete = time.time()
-        print('The time to retrieve data is: %s seconds.\n' % (day_complete - weekday_start_time))
     else:
        print('Only one weekday selected, so unable to calculate most frequent day')
  
@@ -147,7 +145,6 @@ def station_stats(df):
     df['Combined Trip'] = df['Start Station'] + ' ---> ' + df['End Station']
     most_frequent_trip = df['Combined Trip'].mode()[0]
     print('\nThe most frequent trip is \n',most_frequent_trip)
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -204,37 +201,10 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
         time_stats(df)
-        station_go = input('Type "y" when you are ready to proceed for station data.\n').lower()
-        while True:
-            try:
-                if station_go =='y':
-                    station_stats(df)
-                    break
-                else:
-                    station_go = input('Type "y" when you are ready to proceed for station data.\n').lower()
-            except:
-                print('Still cannot proceed')
-        trip_go = input('Type "y" when you are ready to proceed for trip data.\n').lower()
-        while True:
-            try:
-                if trip_go =='y':
-                    trip_duration_stats(df)
-                    break
-                else:
-                    trip_go = input('Type "y" when you are ready to proceed for trip data.\n').lower()
-            except:
-                print('Still cannot proceed')
-        user_go = input('Type "y" when you are ready to proceed for user data.\n').lower()
-        while True:
-            try:
-                if user_go =='y':
-                    user_stats(df)
-                    break
-                else:
-                    user_go = input('Type "y" when you are ready to proceed for user data.\n').lower()
-            except:
-                print('Still cannot proceed')
-        
+        station_stats(df)
+        trip_duration_stats(df)
+        user_stats(df)
+
         ## removes columns that were created for the reporting script#####
         df.drop(['Combined Trip','hour', 'month','Month','day_of_week'],axis=1, inplace=True)
         
@@ -263,6 +233,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-# filename = 'chicago.csv'
-# df = pd.read_csv(filename)
-# print(df.head())
